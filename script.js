@@ -112,8 +112,24 @@ const heroVideo =
     );
 
 
+const bandSection =
+    document.getElementById(
+        "band"
+    );
+
+
+const bandVideo =
+    document.getElementById(
+        "bandVideo"
+    );
+
+
 let activeFilter =
     "all";
+
+
+let bandHasPlayed =
+    false;
 
 
 /* =========================================================
@@ -154,6 +170,153 @@ if (
 
         }
     );
+
+}
+
+
+/* =========================================================
+   KRYDA BAND VIDEO
+========================================================= */
+
+/*
+    Behaviour:
+
+    1. Video DOES NOT play on page load.
+    2. It begins when the Kryda Band section enters the screen.
+    3. It only plays ONCE.
+    4. It does not loop.
+    5. Once it finishes it remains on the final frame.
+    6. Scrolling away and returning will NOT replay it.
+    7. Reloading the webpage resets everything.
+*/
+
+if (
+    bandSection &&
+    bandVideo
+) {
+
+    bandVideo.loop =
+        false;
+
+
+    bandVideo.pause();
+
+
+    bandVideo.addEventListener(
+        "loadedmetadata",
+        () => {
+
+            if (
+                !bandHasPlayed
+            ) {
+
+                bandVideo.currentTime =
+                    0;
+
+            }
+
+        }
+    );
+
+
+    bandVideo.addEventListener(
+        "ended",
+        () => {
+
+            bandVideo.pause();
+
+
+            if (
+                Number.isFinite(
+                    bandVideo.duration
+                ) &&
+                bandVideo.duration > 0.1
+            ) {
+
+                bandVideo.currentTime =
+                    Math.max(
+                        0,
+                        bandVideo.duration -
+                        0.035
+                    );
+
+            }
+
+        }
+    );
+
+
+    if (
+        "IntersectionObserver" in
+        window
+    ) {
+
+        const bandObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                !entry.isIntersecting ||
+                                bandHasPlayed
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            bandHasPlayed =
+                                true;
+
+
+                            bandVideo
+                                .play()
+                                .catch(
+                                    () => {
+
+                                        /*
+                                            Muted video should normally
+                                            autoplay when visible.
+
+                                            If a browser still blocks it,
+                                            the video simply remains
+                                            on the first frame.
+                                        */
+
+                                    }
+                                );
+
+
+                            bandObserver.unobserve(
+                                bandSection
+                            );
+
+                        }
+                    );
+
+                },
+                {
+
+                    /*
+                        Start once roughly 25% of
+                        the section has entered.
+                    */
+
+                    threshold:
+                        0.25
+
+                }
+            );
+
+
+        bandObserver.observe(
+            bandSection
+        );
+
+    }
 
 }
 
@@ -272,8 +435,7 @@ if (
 
 
 /* =========================================================
-   ACTIVE NAVIGATION
-   KEEPING CURRENT WORKING
+   ACTIVE HEADER NAVIGATION
 ========================================================= */
 
 const observedSections =
@@ -302,10 +464,14 @@ function activateNavigation(
     navLinks.forEach(
         (link) => {
 
+            const active =
+                link.dataset.section ===
+                sectionId;
+
+
             link.classList.toggle(
                 "active",
-                link.dataset.section ===
-                    sectionId
+                active
             );
 
         }
@@ -324,7 +490,7 @@ if (
         new IntersectionObserver(
             (entries) => {
 
-                const visible =
+                const visibleSections =
                     entries
                         .filter(
                             (entry) =>
@@ -332,21 +498,21 @@ if (
                         )
                         .sort(
                             (
-                                a,
-                                b
+                                first,
+                                second
                             ) =>
-                                b.intersectionRatio -
-                                a.intersectionRatio
+                                second.intersectionRatio -
+                                first.intersectionRatio
                         );
 
 
                 if (
-                    visible.length >
+                    visibleSections.length >
                     0
                 ) {
 
                     activateNavigation(
-                        visible[0]
+                        visibleSections[0]
                             .target
                             .id
                     );
@@ -383,6 +549,10 @@ if (
 
 }
 
+
+/* =========================================================
+   CLICK NAV
+========================================================= */
 
 navLinks.forEach(
     (link) => {
@@ -611,7 +781,7 @@ function openActivity(
 
 
 /* =========================================================
-   ACTIVITY CARD
+   ACTIVITY CARD CLICK
 ========================================================= */
 
 activityCards.forEach(
@@ -769,7 +939,16 @@ document
 
             button.addEventListener(
                 "click",
-                () => {
+                (event) => {
+
+                    /*
+                        Prevent an activity-card click
+                        from opening the modal if a
+                        data-scroll button is inside.
+                    */
+
+                    event.stopPropagation();
+
 
                     const selector =
                         button.dataset.scroll;
@@ -829,7 +1008,7 @@ backTop?.addEventListener(
 
 
 /* =========================================================
-   REVEAL EFFECT
+   SCROLL REVEAL
 ========================================================= */
 
 const revealElements =
@@ -899,8 +1078,8 @@ if (
                         index %
                         4
                     ) *
-                    65,
-                    195
+                    60,
+                    180
                 )}ms`;
 
 
@@ -926,52 +1105,6 @@ else {
     );
 
 }
-
-
-/* =========================================================
-   FUTURE KRYDA BAND VIDEO
-========================================================= */
-
-/*
-
-WHEN YOU SEND THE KRYDA BAND ROTATION VIDEO:
-
-1. Put this inside #bandVideoFrame:
-
-<video
-    id="bandRotationVideo"
-    class="band-rotation-video"
-    muted
-    playsinline
-    preload="auto"
->
-    <source
-        src="kryda-band-rotation.mp4"
-        type="video/mp4"
-    >
-</video>
-
-
-2. Then we can use code like this:
-
-const bandVideo =
-    document.getElementById(
-        "bandRotationVideo"
-    );
-
-const bandSection =
-    document.getElementById(
-        "band"
-    );
-
-
-The video's currentTime can then be linked
-to scroll progress through the Band section.
-
-I have NOT enabled this yet because you
-said you will send the video.
-
-*/
 
 
 /* =========================================================
