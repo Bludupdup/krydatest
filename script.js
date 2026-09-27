@@ -134,7 +134,6 @@ let bandHasPlayed =
 
 /* =========================================================
    HERO VIDEO
-   SAME BEHAVIOUR
 ========================================================= */
 
 if (
@@ -177,18 +176,6 @@ if (
 /* =========================================================
    KRYDA BAND VIDEO
 ========================================================= */
-
-/*
-    Behaviour:
-
-    1. Video DOES NOT play on page load.
-    2. It begins when the Kryda Band section enters the screen.
-    3. It only plays ONCE.
-    4. It does not loop.
-    5. Once it finishes it remains on the final frame.
-    6. Scrolling away and returning will NOT replay it.
-    7. Reloading the webpage resets everything.
-*/
 
 if (
     bandSection &&
@@ -275,18 +262,7 @@ if (
                             bandVideo
                                 .play()
                                 .catch(
-                                    () => {
-
-                                        /*
-                                            Muted video should normally
-                                            autoplay when visible.
-
-                                            If a browser still blocks it,
-                                            the video simply remains
-                                            on the first frame.
-                                        */
-
-                                    }
+                                    () => {}
                                 );
 
 
@@ -299,15 +275,7 @@ if (
 
                 },
                 {
-
-                    /*
-                        Start once roughly 25% of
-                        the section has entered.
-                    */
-
-                    threshold:
-                        0.25
-
+                    threshold: 0.25
                 }
             );
 
@@ -550,10 +518,6 @@ if (
 }
 
 
-/* =========================================================
-   CLICK NAV
-========================================================= */
-
 navLinks.forEach(
     (link) => {
 
@@ -680,9 +644,7 @@ function openActivity(
     if (
         !activityModal
     ) {
-
         return;
-
     }
 
 
@@ -730,10 +692,8 @@ function openActivity(
     if (
         modalArt
     ) {
-
         modalArt.textContent =
             "✨";
-
     }
 
 
@@ -755,10 +715,8 @@ function openActivity(
     if (
         modalPlay
     ) {
-
         modalPlay.textContent =
             "▶ Start Activity";
-
     }
 
 
@@ -811,9 +769,7 @@ function closeModal() {
     if (
         !activityModal
     ) {
-
         return;
-
     }
 
 
@@ -927,7 +883,7 @@ modalPlay?.addEventListener(
 
 
 /* =========================================================
-   SMOOTH SCROLL BUTTONS
+   SMOOTH SCROLL
 ========================================================= */
 
 document
@@ -941,12 +897,6 @@ document
                 "click",
                 (event) => {
 
-                    /*
-                        Prevent an activity-card click
-                        from opening the modal if a
-                        data-scroll button is inside.
-                    */
-
                     event.stopPropagation();
 
 
@@ -957,9 +907,7 @@ document
                     if (
                         !selector
                     ) {
-
                         return;
-
                     }
 
 
@@ -970,13 +918,8 @@ document
 
 
                     target?.scrollIntoView({
-
-                        behavior:
-                            "smooth",
-
-                        block:
-                            "start"
-
+                        behavior: "smooth",
+                        block: "start"
                     });
 
                 }
@@ -995,12 +938,8 @@ backTop?.addEventListener(
     () => {
 
         window.scrollTo({
-
             top: 0,
-
-            behavior:
-                "smooth"
-
+            behavior: "smooth"
         });
 
     }
@@ -1035,9 +974,7 @@ if (
                         if (
                             !entry.isIntersecting
                         ) {
-
                             return;
-
                         }
 
 
@@ -1055,13 +992,9 @@ if (
 
             },
             {
-
-                threshold:
-                    0.12,
-
+                threshold: 0.12,
                 rootMargin:
                     "0px 0px -40px 0px"
-
             }
         );
 
@@ -1074,11 +1007,7 @@ if (
 
             element.style.transitionDelay =
                 `${Math.min(
-                    (
-                        index %
-                        4
-                    ) *
-                    60,
+                    (index % 4) * 60,
                     180
                 )}ms`;
 
