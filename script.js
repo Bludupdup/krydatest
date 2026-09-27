@@ -118,10 +118,12 @@ let activeFilter =
 
 /* =========================================================
    HERO VIDEO
-   PLAY ONCE
+   SAME BEHAVIOUR
 ========================================================= */
 
-if (heroVideo) {
+if (
+    heroVideo
+) {
 
     heroVideo.loop =
         false;
@@ -138,8 +140,7 @@ if (heroVideo) {
                 Number.isFinite(
                     heroVideo.duration
                 ) &&
-                heroVideo.duration >
-                    0.1
+                heroVideo.duration > 0.1
             ) {
 
                 heroVideo.currentTime =
@@ -272,16 +273,8 @@ if (
 
 /* =========================================================
    ACTIVE NAVIGATION
+   KEEPING CURRENT WORKING
 ========================================================= */
-
-/*
-    This controls the coloured underline
-    / glass highlight in the header.
-
-    It updates automatically depending
-    on which section is currently visible.
-*/
-
 
 const observedSections =
     navLinks
@@ -309,14 +302,10 @@ function activateNavigation(
     navLinks.forEach(
         (link) => {
 
-            const isActive =
-                link.dataset.section ===
-                sectionId;
-
-
             link.classList.toggle(
                 "active",
-                isActive
+                link.dataset.section ===
+                    sectionId
             );
 
         }
@@ -335,7 +324,7 @@ if (
         new IntersectionObserver(
             (entries) => {
 
-                const visibleSections =
+                const visible =
                     entries
                         .filter(
                             (entry) =>
@@ -343,21 +332,21 @@ if (
                         )
                         .sort(
                             (
-                                first,
-                                second
+                                a,
+                                b
                             ) =>
-                                second.intersectionRatio -
-                                first.intersectionRatio
+                                b.intersectionRatio -
+                                a.intersectionRatio
                         );
 
 
                 if (
-                    visibleSections.length >
+                    visible.length >
                     0
                 ) {
 
                     activateNavigation(
-                        visibleSections[0]
+                        visible[0]
                             .target
                             .id
                     );
@@ -366,11 +355,6 @@ if (
 
             },
             {
-
-                /*
-                    Focus roughly on the
-                    centre of the viewport.
-                */
 
                 rootMargin:
                     "-30% 0px -45% 0px",
@@ -399,11 +383,6 @@ if (
 
 }
 
-
-/*
-    Immediately highlight nav
-    item when user clicks it.
-*/
 
 navLinks.forEach(
     (link) => {
@@ -521,7 +500,7 @@ filterButtons.forEach(
 
 
 /* =========================================================
-   OPEN ACTIVITY MODAL
+   OPEN ACTIVITY
 ========================================================= */
 
 function openActivity(
@@ -632,7 +611,7 @@ function openActivity(
 
 
 /* =========================================================
-   ACTIVITY CARD CLICK
+   ACTIVITY CARD
 ========================================================= */
 
 activityCards.forEach(
@@ -640,15 +619,7 @@ activityCards.forEach(
 
         card.addEventListener(
             "click",
-            (event) => {
-
-                /*
-                    Prevent double behaviour
-                    from the inner button.
-                */
-
-                event.stopPropagation();
-
+            () => {
 
                 openActivity(
                     card
@@ -786,7 +757,7 @@ modalPlay?.addEventListener(
 
 
 /* =========================================================
-   HERO BUTTON SCROLL
+   SMOOTH SCROLL BUTTONS
 ========================================================= */
 
 document
@@ -820,11 +791,13 @@ document
 
 
                     target?.scrollIntoView({
+
                         behavior:
                             "smooth",
 
                         block:
                             "start"
+
                     });
 
                 }
@@ -844,8 +817,7 @@ backTop?.addEventListener(
 
         window.scrollTo({
 
-            top:
-                0,
+            top: 0,
 
             behavior:
                 "smooth"
@@ -857,7 +829,7 @@ backTop?.addEventListener(
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL EFFECT
 ========================================================= */
 
 const revealElements =
@@ -954,6 +926,52 @@ else {
     );
 
 }
+
+
+/* =========================================================
+   FUTURE KRYDA BAND VIDEO
+========================================================= */
+
+/*
+
+WHEN YOU SEND THE KRYDA BAND ROTATION VIDEO:
+
+1. Put this inside #bandVideoFrame:
+
+<video
+    id="bandRotationVideo"
+    class="band-rotation-video"
+    muted
+    playsinline
+    preload="auto"
+>
+    <source
+        src="kryda-band-rotation.mp4"
+        type="video/mp4"
+    >
+</video>
+
+
+2. Then we can use code like this:
+
+const bandVideo =
+    document.getElementById(
+        "bandRotationVideo"
+    );
+
+const bandSection =
+    document.getElementById(
+        "band"
+    );
+
+
+The video's currentTime can then be linked
+to scroll progress through the Band section.
+
+I have NOT enabled this yet because you
+said you will send the video.
+
+*/
 
 
 /* =========================================================
