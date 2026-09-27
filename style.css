@@ -51,7 +51,9 @@ body {
         sans-serif;
 
     color: var(--ink);
+
     background: white;
+
     overflow-x: hidden;
 }
 
@@ -101,7 +103,9 @@ a {
 
 .site-header {
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
     background:
@@ -122,11 +126,21 @@ a {
 
     border-bottom:
         1px solid
-        rgba(45,69,105,0.045);
+        rgba(
+            45,
+            69,
+            105,
+            0.045
+        );
 
     box-shadow:
         0 5px 18px
-        rgba(36,55,90,0.025);
+        rgba(
+            36,
+            55,
+            90,
+            0.025
+        );
 }
 
 
@@ -134,7 +148,9 @@ a {
     min-height: 70px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -143,6 +159,7 @@ a {
 
 .logo {
     display: inline-flex;
+
     align-items: center;
 
     gap: 10px;
@@ -155,7 +172,9 @@ a {
     display: block;
 
     width: auto;
+
     height: 58px;
+
     max-width: 120px;
 
     object-fit: contain;
@@ -171,19 +190,23 @@ a {
         cursive;
 
     font-size: 31px;
+
     line-height: 1;
 
     font-weight: 700;
 
     letter-spacing: -1.5px;
 
-    transform: rotate(-2deg);
+    transform:
+        rotate(-2deg);
 }
 
 
 .nav-menu {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 4px;
@@ -194,7 +217,9 @@ a {
     position: relative;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     min-height: 40px;
@@ -210,6 +235,7 @@ a {
     color: #50556c;
 
     font-size: 14px;
+
     font-weight: 800;
 
     transition:
@@ -228,6 +254,7 @@ a {
 
     left: 15px;
     right: 15px;
+
     bottom: 4px;
 
     height: 3px;
@@ -242,8 +269,11 @@ a {
             #31b5ea
         );
 
-    transform: scaleX(0);
-    transform-origin: left center;
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left center;
 
     opacity: 0;
 
@@ -257,7 +287,12 @@ a {
     color: #35285f;
 
     background:
-        rgba(255,255,255,0.38);
+        rgba(
+            255,
+            255,
+            255,
+            0.38
+        );
 }
 
 
@@ -281,13 +316,16 @@ a {
 
 
 .nav-link.active::after {
-    transform: scaleX(1);
+    transform:
+        scaleX(1);
+
     opacity: 1;
 }
 
 
 .nav-actions {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -308,6 +346,7 @@ a {
         2px solid #20264f;
 
     font-size: 13px;
+
     font-weight: 900;
 
     cursor: pointer;
@@ -328,6 +367,10 @@ a {
     border-color: #7662dc;
 }
 
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
 
 .hamburger {
     display: none;
@@ -350,6 +393,7 @@ a {
     display: block;
 
     width: 100%;
+
     height: 3px;
 
     margin: 4px 0;
@@ -362,19 +406,22 @@ a {
 }
 
 
-.hamburger.open span:nth-child(1) {
+.hamburger.open
+span:nth-child(1) {
     transform:
         translateY(7px)
         rotate(45deg);
 }
 
 
-.hamburger.open span:nth-child(2) {
+.hamburger.open
+span:nth-child(2) {
     opacity: 0;
 }
 
 
-.hamburger.open span:nth-child(3) {
+.hamburger.open
+span:nth-child(3) {
     transform:
         translateY(-7px)
         rotate(-45deg);
@@ -387,6 +434,7 @@ a {
 
 .hero {
     position: relative;
+
     overflow: hidden;
 }
 
@@ -399,6 +447,7 @@ a {
     min-height: 760px;
 
     display: flex;
+
     align-items: center;
 
     background: #a6def8;
@@ -411,9 +460,11 @@ a {
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
+
     object-position: center;
 
     z-index: 0;
@@ -456,6 +507,7 @@ a {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -502,6 +554,7 @@ a {
         );
 
     -webkit-background-clip: text;
+
     background-clip: text;
 
     color: transparent;
@@ -517,6 +570,7 @@ a {
     color: #313a61;
 
     font-size: 18px;
+
     font-weight: 700;
 
     line-height: 1.7;
@@ -545,6 +599,7 @@ a {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
@@ -587,9 +642,11 @@ a {
 
 .primary-button span {
     width: 29px;
+
     height: 29px;
 
     display: grid;
+
     place-items: center;
 
     border-radius: 50%;
@@ -639,6 +696,7 @@ a {
 
 .hero-mini-stats div {
     display: flex;
+
     flex-direction: column;
 
     text-align: center;
@@ -712,6 +770,7 @@ a {
     display: flex;
 
     justify-content: space-between;
+
     align-items: flex-end;
 
     gap: 45px;
@@ -776,7 +835,7 @@ a {
 
 
 /* =========================================================
-   REVEALS
+   SCROLL REVEALS
 ========================================================= */
 
 .reveal-left,
@@ -817,7 +876,7 @@ a {
 
 
 /* =========================================================
-   ACTIVITIES
+   EXPLORE ACTIVITIES
 ========================================================= */
 
 .activities-section {
@@ -830,6 +889,10 @@ a {
         );
 }
 
+
+/* =========================================================
+   ACTIVITY BACKGROUND ANIMATION
+========================================================= */
 
 .activity-orb {
     position: absolute;
@@ -846,9 +909,11 @@ a {
 
 .activity-orb-one {
     width: 190px;
+
     height: 190px;
 
     left: 5%;
+
     top: 9%;
 
     background:
@@ -858,29 +923,35 @@ a {
 
 .activity-orb-two {
     width: 130px;
+
     height: 130px;
 
     right: 8%;
+
     top: 12%;
 
     background:
         rgba(111,60,255,0.14);
 
-    animation-delay: -3s;
+    animation-delay:
+        -3s;
 }
 
 
 .activity-orb-three {
     width: 150px;
+
     height: 150px;
 
     right: 24%;
+
     bottom: 6%;
 
     background:
         rgba(255,61,134,0.12);
 
-    animation-delay: -5s;
+    animation-delay:
+        -5s;
 }
 
 
@@ -903,23 +974,32 @@ a {
 
 .activity-ring-one {
     width: 390px;
+
     height: 390px;
 
     right: -150px;
+
     top: -130px;
 }
 
 
 .activity-ring-two {
     width: 300px;
+
     height: 300px;
 
     left: -140px;
+
     bottom: -100px;
 
-    animation-delay: -5s;
+    animation-delay:
+        -5s;
 }
 
+
+/* =========================================================
+   ACTIVITY FILTERS
+========================================================= */
 
 .filter-row {
     display: flex;
@@ -947,7 +1027,8 @@ a {
         1px solid
         rgba(255,255,255,0.55);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 
     font-size: 13px;
 
@@ -990,11 +1071,18 @@ a {
 }
 
 
+/* =========================================================
+   ACTIVITY CARDS
+========================================================= */
+
 .activity-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
 
     gap: 28px;
 }
@@ -1104,13 +1192,15 @@ a {
 .activity-card-copy {
     position: relative;
 
-    z-index: 3;
+    z-index: 5;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: flex-start;
+
+    min-width: 0;
 
     padding:
         31px 10px 29px 34px;
@@ -1137,7 +1227,8 @@ a {
         1px solid
         rgba(255,255,255,0.24);
 
-    backdrop-filter: blur(9px);
+    backdrop-filter:
+        blur(9px);
 
     font-size: 10px;
 
@@ -1179,9 +1270,15 @@ a {
 }
 
 
+/* =========================================================
+   GLASS ACTIVITY BUTTON
+========================================================= */
+
 .activity-link,
 .parent-card-button {
     position: relative;
+
+    z-index: 6;
 
     overflow: hidden;
 
@@ -1220,7 +1317,6 @@ a {
     box-shadow:
         inset 0 1px 0
         rgba(255,255,255,0.65),
-
         0 7px 17px
         rgba(41,35,39,0.12);
 
@@ -1243,12 +1339,15 @@ a {
     position: absolute;
 
     top: -90%;
+
     left: -65%;
 
     width: 54%;
+
     height: 280%;
 
-    transform: rotate(25deg);
+    transform:
+        rotate(25deg);
 
     background:
         linear-gradient(
@@ -1279,86 +1378,199 @@ a {
 }
 
 
+/* =========================================================
+   ACTIVITY IMAGE AREA
+   UPDATED FOR YOUR NEW PNGS
+========================================================= */
+
 .activity-image-slot {
     position: relative;
+
+    min-width: 0;
 
     min-height: 340px;
 
     overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        22px 18px;
+
+    z-index: 2;
 }
 
+
+/*
+    Decorative glow stays BEHIND the image.
+*/
 
 .activity-image-slot::before {
     content: "";
 
     position: absolute;
 
-    width: 280px;
-    height: 280px;
+    z-index: 0;
 
-    right: -20px;
-    top: 44px;
+    width: 275px;
+
+    height: 275px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-45%, -47%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle at 40% 36%,
-            rgba(255,255,255,0.76),
+            rgba(255,255,255,0.73),
             rgba(255,255,255,0.15) 58%,
             transparent 73%
         );
+
+    pointer-events: none;
 }
 
 
-.activity-image-slot img {
-    position: absolute;
+/*
+    =====================================================
+    ALL SIX ACTIVITY IMAGES USE THIS CLASS.
+
+    object-fit: contain means:
+    - no cropping
+    - no stretching
+    - no overflow
+    - keeps transparency
+    =====================================================
+*/
+
+.activity-card-image {
+    position: relative;
 
     z-index: 3;
 
-    right: 0;
-    bottom: 0;
+    display: block;
 
     width: 100%;
 
-    max-width: 300px;
-    max-height: 310px;
+    height: 100%;
+
+    max-width: 280px;
+
+    max-height: 285px;
 
     object-fit: contain;
 
-    object-position:
-        bottom right;
+    object-position: center;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transform:
+        translateZ(0);
+
+    filter:
+        drop-shadow(
+            0 12px 13px
+            rgba(48,35,39,0.12)
+        );
+
+    transition:
+        transform
+        0.35s ease;
 }
 
 
-.image-placeholder {
-    position: absolute;
+/*
+    Tiny image motion when card is hovered.
+    It stays fully inside the image section.
+*/
 
-    z-index: 4;
+.activity-card:hover
+.activity-card-image {
+    transform:
+        translateY(-4px)
+        scale(1.025);
+}
 
-    right: 25px;
-    bottom: 22px;
 
-    padding:
-        6px 9px;
+/* =========================================================
+   OPTIONAL INDIVIDUAL IMAGE TUNING
 
-    border-radius: 7px;
+   Your PNGs have different natural shapes, so these tiny
+   adjustments keep their visual sizes balanced.
 
-    border:
-        1px dashed
-        rgba(27,28,40,0.28);
+   This does NOT change the card structure.
+========================================================= */
 
-    background:
-        rgba(255,255,255,0.28);
 
-    color:
-        rgba(20,20,30,0.43);
+/* Move Mission - tall character */
 
-    font-size: 9px;
+.activity-card[data-title="Move Mission"]
+.activity-card-image {
+    max-width: 235px;
 
-    font-weight: 900;
+    max-height: 290px;
+}
 
-    letter-spacing: 1px;
+
+/* Puzzle Planet - smaller puzzle symbol */
+
+.activity-card[data-title="Puzzle Planet"]
+.activity-card-image {
+    max-width: 215px;
+
+    max-height: 220px;
+}
+
+
+/* Nature Quest - tree is tall */
+
+.activity-card[data-title="Nature Quest"]
+.activity-card-image {
+    max-width: 240px;
+
+    max-height: 290px;
+}
+
+
+/* Colour Quest - palette */
+
+.activity-card[data-title="Colour Quest"]
+.activity-card-image {
+    max-width: 245px;
+
+    max-height: 240px;
+}
+
+
+/* Story Spark - broad illustration */
+
+.activity-card[data-title="Story Spark"]
+.activity-card-image {
+    max-width: 290px;
+
+    max-height: 265px;
+}
+
+
+/* Team Quest - group illustration */
+
+.activity-card[data-title="Team Quest"]
+.activity-card-image {
+    max-width: 265px;
+
+    max-height: 285px;
 }
 
 
@@ -1423,9 +1635,11 @@ a {
 
 .growth-orb-one {
     width: 440px;
+
     height: 440px;
 
     top: -170px;
+
     left: -130px;
 
     background:
@@ -1435,29 +1649,35 @@ a {
 
 .growth-orb-two {
     width: 370px;
+
     height: 370px;
 
     right: -130px;
+
     top: 22%;
 
     background:
         rgba(84,74,231,0.15);
 
-    animation-delay: -4s;
+    animation-delay:
+        -4s;
 }
 
 
 .growth-orb-three {
     width: 270px;
+
     height: 270px;
 
     left: 44%;
+
     bottom: -130px;
 
     background:
         rgba(255,89,160,0.14);
 
-    animation-delay: -7s;
+    animation-delay:
+        -7s;
 }
 
 
@@ -1477,6 +1697,7 @@ a {
 
 .particle-one {
     left: 8%;
+
     top: 34%;
 
     font-size: 36px;
@@ -1485,31 +1706,37 @@ a {
 
 .particle-two {
     right: 10%;
+
     top: 17%;
 
     font-size: 23px;
 
-    animation-delay: -2s;
+    animation-delay:
+        -2s;
 }
 
 
 .particle-three {
     right: 27%;
+
     bottom: 9%;
 
     font-size: 48px;
 
-    animation-delay: -4s;
+    animation-delay:
+        -4s;
 }
 
 
 .particle-four {
     left: 33%;
+
     top: 12%;
 
     font-size: 20px;
 
-    animation-delay: -6s;
+    animation-delay:
+        -6s;
 }
 
 
@@ -1517,7 +1744,10 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(5,minmax(0,1fr));
+        repeat(
+            5,
+            minmax(0,1fr)
+        );
 
     gap: 14px;
 }
@@ -1615,6 +1845,10 @@ a {
 }
 
 
+/* =========================================================
+   GROWTH GIF AREA
+========================================================= */
+
 .growth-media {
     position: relative;
 
@@ -1624,6 +1858,7 @@ a {
         12px 12px 0;
 
     display: grid;
+
     place-items: center;
 
     overflow: hidden;
@@ -1651,28 +1886,45 @@ a {
 
     position: absolute;
 
+    z-index: 0;
+
     width: 175px;
+
     height: 175px;
 
     top: -40px;
+
     right: -45px;
 
     border-radius: 50%;
 
     background:
         rgba(255,255,255,0.16);
+
+    pointer-events: none;
 }
 
 
-.growth-media img {
+.growth-card-gif {
     position: relative;
 
     z-index: 2;
 
+    display: block;
+
     width: 100%;
+
     height: 100%;
 
-    object-fit: cover;
+    max-width: 100%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 14px;
 }
 
 
@@ -1786,9 +2038,11 @@ a {
 
 .lavender-orb-one {
     width: 440px;
+
     height: 440px;
 
     left: -170px;
+
     top: -150px;
 
     background:
@@ -1798,29 +2052,35 @@ a {
 
 .lavender-orb-two {
     width: 370px;
+
     height: 370px;
 
     right: -140px;
+
     top: 9%;
 
     background:
         rgba(255,102,197,0.2);
 
-    animation-delay: -4s;
+    animation-delay:
+        -4s;
 }
 
 
 .lavender-orb-three {
     width: 260px;
+
     height: 260px;
 
     left: 42%;
+
     bottom: -130px;
 
     background:
         rgba(86,219,244,0.17);
 
-    animation-delay: -7s;
+    animation-delay:
+        -7s;
 }
 
 
@@ -1828,7 +2088,10 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(3,minmax(0,1fr));
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
 
     gap: 22px;
 }
@@ -1909,6 +2172,7 @@ a {
     height: 225px;
 
     display: grid;
+
     place-items: center;
 
     overflow: hidden;
@@ -1933,9 +2197,11 @@ a {
     position: absolute;
 
     width: 205px;
+
     height: 205px;
 
     right: -50px;
+
     top: -42px;
 
     border-radius: 50%;
@@ -2046,9 +2312,11 @@ a {
 
 .band-orb-one {
     width: 580px;
+
     height: 580px;
 
     left: -250px;
+
     bottom: -250px;
 
     background:
@@ -2058,15 +2326,18 @@ a {
 
 .band-orb-two {
     width: 460px;
+
     height: 460px;
 
     right: -170px;
+
     top: -170px;
 
     background:
         rgba(197,242,255,0.26);
 
-    animation-delay: -5s;
+    animation-delay:
+        -5s;
 }
 
 
@@ -2088,23 +2359,32 @@ a {
 
 .band-dot-one {
     width: 65px;
+
     height: 65px;
 
     left: 42%;
+
     top: 13%;
 }
 
 
 .band-dot-two {
     width: 32px;
+
     height: 32px;
 
     right: 17%;
+
     bottom: 10%;
 
-    animation-delay: -4s;
+    animation-delay:
+        -4s;
 }
 
+
+/* =========================================================
+   BAND VIDEO
+========================================================= */
 
 .band-video-card {
     display: grid;
@@ -2137,7 +2417,8 @@ a {
         -9px -9px 22px
         rgba(255,255,255,0.14);
 
-    backdrop-filter: blur(13px);
+    backdrop-filter:
+        blur(13px);
 }
 
 
@@ -2148,11 +2429,13 @@ a {
 
 .band-video {
     width: 100%;
+
     height: 455px;
 
     display: block;
 
     object-fit: cover;
+
     object-position: center;
 
     border-radius: 23px;
@@ -2248,11 +2531,18 @@ a {
 }
 
 
+/* =========================================================
+   BAND FEATURE CARDS
+========================================================= */
+
 .band-feature-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(3,minmax(0,1fr));
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
 
     gap: 22px;
 }
@@ -2331,6 +2621,7 @@ a {
     height: 210px;
 
     display: grid;
+
     place-items: center;
 
     overflow: hidden;
@@ -2355,9 +2646,11 @@ a {
     position: absolute;
 
     width: 210px;
+
     height: 210px;
 
     top: -45px;
+
     right: -55px;
 
     border-radius: 50%;
@@ -2417,7 +2710,6 @@ a {
 
 /* =========================================================
    GROWTH PASSPORT
-   UPDATED DESIGN
 ========================================================= */
 
 .passport-section {
@@ -2433,7 +2725,7 @@ a {
 
 
 /* =========================================================
-   PASSPORT BACKGROUND ANIMATION
+   PASSPORT BACKGROUND
 ========================================================= */
 
 .passport-orb {
@@ -2451,9 +2743,11 @@ a {
 
 .passport-orb-one {
     width: 460px;
+
     height: 460px;
 
     left: -190px;
+
     top: -160px;
 
     background:
@@ -2463,29 +2757,35 @@ a {
 
 .passport-orb-two {
     width: 370px;
+
     height: 370px;
 
     right: -130px;
+
     top: 11%;
 
     background:
         rgba(124,63,223,0.18);
 
-    animation-delay: -4s;
+    animation-delay:
+        -4s;
 }
 
 
 .passport-orb-three {
     width: 260px;
+
     height: 260px;
 
     left: 46%;
+
     bottom: -120px;
 
     background:
         rgba(255,220,239,0.18);
 
-    animation-delay: -7s;
+    animation-delay:
+        -7s;
 }
 
 
@@ -2508,21 +2808,26 @@ a {
 
 .passport-ring-one {
     width: 360px;
+
     height: 360px;
 
     right: -110px;
+
     bottom: -80px;
 }
 
 
 .passport-ring-two {
     width: 220px;
+
     height: 220px;
 
     left: 8%;
+
     bottom: 7%;
 
-    animation-delay: -4s;
+    animation-delay:
+        -4s;
 }
 
 
@@ -2542,6 +2847,8 @@ a {
     gap: 55px;
 
     margin-bottom: 39px;
+
+    width: 100%;
 }
 
 
@@ -2571,6 +2878,7 @@ a {
     content: "";
 
     width: 42px;
+
     height: 2px;
 
     margin-left: 5px;
@@ -2630,18 +2938,23 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
 
     gap: 26px;
+
+    width: 100%;
 }
 
 
-/* =========================================================
-   PASSPORT ACTIVITY STYLE CARDS
-========================================================= */
-
 .passport-activity-card {
     position: relative;
+
+    min-width: 0;
+
+    width: 100%;
 
     min-height: 330px;
 
@@ -2759,6 +3072,8 @@ a {
 
     z-index: 3;
 
+    min-width: 0;
+
     display: flex;
 
     flex-direction: column;
@@ -2790,7 +3105,8 @@ a {
         1px solid
         rgba(255,255,255,0.24);
 
-    backdrop-filter: blur(9px);
+    backdrop-filter:
+        blur(9px);
 
     font-size: 10px;
 
@@ -2835,7 +3151,7 @@ a {
 
 
 /* =========================================================
-   MAIN PROFILE PILL
+   PASSPORT PROFILE
 ========================================================= */
 
 .passport-profile-pill {
@@ -2863,7 +3179,8 @@ a {
         1px solid
         rgba(255,255,255,0.55);
 
-    backdrop-filter: blur(13px);
+    backdrop-filter:
+        blur(13px);
 
     box-shadow:
         inset 0 1px 0
@@ -2876,6 +3193,7 @@ a {
 
 .passport-small-avatar {
     width: 34px;
+
     height: 34px;
 
     display: grid;
@@ -2916,11 +3234,13 @@ a {
 
 
 /* =========================================================
-   MAIN CIRCULAR VISUAL
+   PASSPORT MAIN VISUAL
 ========================================================= */
 
 .passport-progress-visual {
     position: relative;
+
+    min-width: 0;
 
     min-height: 330px;
 
@@ -2938,9 +3258,11 @@ a {
     position: absolute;
 
     width: 280px;
+
     height: 280px;
 
     right: -20px;
+
     top: 34px;
 
     border-radius: 50%;
@@ -2961,6 +3283,7 @@ a {
     z-index: 3;
 
     width: 155px;
+
     height: 155px;
 
     display: flex;
@@ -2968,6 +3291,7 @@ a {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -2983,7 +3307,8 @@ a {
         1px solid
         rgba(255,255,255,0.66);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     box-shadow:
         0 18px 30px
@@ -3023,9 +3348,11 @@ a {
     position: absolute;
 
     right: 16px;
+
     bottom: -50px;
 
     width: 150px;
+
     height: 150px;
 
     border-radius: 50%;
@@ -3054,6 +3381,7 @@ a {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     margin-bottom: 8px;
@@ -3072,6 +3400,7 @@ a {
 
 .passport-track {
     width: 100%;
+
     height: 9px;
 
     overflow: hidden;
@@ -3115,6 +3444,8 @@ a {
 .passport-card-art {
     position: relative;
 
+    min-width: 0;
+
     min-height: 330px;
 
     display: grid;
@@ -3131,9 +3462,11 @@ a {
     position: absolute;
 
     width: 270px;
+
     height: 270px;
 
     right: -23px;
+
     top: 40px;
 
     border-radius: 50%;
@@ -3152,9 +3485,11 @@ a {
     position: absolute;
 
     width: 190px;
+
     height: 190px;
 
     right: -30px;
+
     bottom: -35px;
 
     border-radius: 50%;
@@ -3184,7 +3519,7 @@ a {
 
 
 /* =========================================================
-   BADGES
+   PASSPORT BADGES
 ========================================================= */
 
 .passport-badge-list {
@@ -3216,7 +3551,8 @@ a {
         1px solid
         rgba(255,255,255,0.48);
 
-    backdrop-filter: blur(9px);
+    backdrop-filter:
+        blur(9px);
 
     font-size: 10px;
 
@@ -3270,9 +3606,11 @@ a {
 
 .parents-orb-one {
     width: 480px;
+
     height: 480px;
 
     left: -190px;
+
     top: -160px;
 
     background:
@@ -3282,15 +3620,18 @@ a {
 
 .parents-orb-two {
     width: 380px;
+
     height: 380px;
 
     right: -140px;
+
     bottom: -140px;
 
     background:
         rgba(117,60,213,0.15);
 
-    animation-delay: -5s;
+    animation-delay:
+        -5s;
 }
 
 
@@ -3298,7 +3639,10 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
 
     gap: 25px;
 }
@@ -3432,7 +3776,8 @@ a {
         1px solid
         rgba(255,255,255,0.25);
 
-    backdrop-filter: blur(9px);
+    backdrop-filter:
+        blur(9px);
 
     font-size: 10px;
 
@@ -3491,9 +3836,11 @@ a {
     position: absolute;
 
     width: 245px;
+
     height: 245px;
 
     right: -30px;
+
     top: 38px;
 
     border-radius: 50%;
@@ -3528,6 +3875,7 @@ a {
     z-index: 3;
 
     width: 72%;
+
     height: 150px;
 
     display: flex;
@@ -3587,9 +3935,11 @@ a {
 
 .download-orb-one {
     width: 440px;
+
     height: 440px;
 
     left: -170px;
+
     top: -160px;
 
     background:
@@ -3599,15 +3949,18 @@ a {
 
 .download-orb-two {
     width: 370px;
+
     height: 370px;
 
     right: -140px;
+
     bottom: -150px;
 
     background:
         rgba(111,60,230,0.15);
 
-    animation-delay: -5s;
+    animation-delay:
+        -5s;
 }
 
 
@@ -3630,7 +3983,8 @@ a {
     background:
         rgba(255,255,255,0.28);
 
-    backdrop-filter: blur(15px);
+    backdrop-filter:
+        blur(15px);
 
     box-shadow:
         12px 15px 0
@@ -3651,7 +4005,8 @@ a {
 
     justify-content: center;
 
-    padding: 53px;
+    padding:
+        53px;
 }
 
 
@@ -3776,12 +4131,14 @@ a {
 
 .store-button div {
     display: flex;
+
     flex-direction: column;
 }
 
 
 .store-button small {
     font-size: 9px;
+
     opacity: 0.82;
 }
 
@@ -3807,6 +4164,7 @@ a {
     position: absolute;
 
     width: 360px;
+
     height: 360px;
 
     border-radius: 50%;
@@ -3826,6 +4184,7 @@ a {
     z-index: 2;
 
     width: 235px;
+
     height: 440px;
 
     padding: 10px;
@@ -3852,9 +4211,11 @@ a {
     z-index: 4;
 
     top: 18px;
+
     left: 50%;
 
     width: 90px;
+
     height: 22px;
 
     transform:
@@ -3868,6 +4229,7 @@ a {
 
 .phone-screen {
     width: 100%;
+
     height: 100%;
 
     display: flex;
@@ -3875,6 +4237,7 @@ a {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     padding:
@@ -3894,6 +4257,7 @@ a {
 
 .phone-app-logo {
     width: 72px;
+
     height: 72px;
 
     display: grid;
@@ -3949,7 +4313,8 @@ a {
 
     margin-top: 27px;
 
-    padding: 15px;
+    padding:
+        15px;
 
     border-radius: 17px;
 
@@ -3960,7 +4325,8 @@ a {
         1px solid
         rgba(255,255,255,0.6);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 }
 
 
@@ -4005,7 +4371,8 @@ a {
     display: grid;
 
     grid-template-columns:
-        1.5fr repeat(3,1fr);
+        1.5fr
+        repeat(3,1fr);
 
     gap: 45px;
 }
@@ -4032,6 +4399,7 @@ a {
 
 .footer-column {
     display: flex;
+
     flex-direction: column;
 
     gap: 10px;
@@ -4057,6 +4425,7 @@ a {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     margin-top: 45px;
@@ -4075,6 +4444,7 @@ a {
 
 .back-top {
     color: white;
+
     background: transparent;
 
     cursor: pointer;
@@ -4082,7 +4452,7 @@ a {
 
 
 /* =========================================================
-   MODAL
+   ACTIVITY MODAL
 ========================================================= */
 
 .modal-overlay {
@@ -4101,9 +4471,11 @@ a {
     background:
         rgba(17,20,45,0.68);
 
-    backdrop-filter: blur(7px);
+    backdrop-filter:
+        blur(7px);
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
@@ -4113,6 +4485,7 @@ a {
 
 .modal-overlay.open {
     opacity: 1;
+
     visibility: visible;
 }
 
@@ -4121,7 +4494,10 @@ a {
     position: relative;
 
     width:
-        min(470px,100%);
+        min(
+            470px,
+            100%
+        );
 
     padding: 34px;
 
@@ -4156,9 +4532,11 @@ a {
     position: absolute;
 
     top: 18px;
+
     right: 18px;
 
     width: 40px;
+
     height: 40px;
 
     border-radius: 50%;
@@ -4169,6 +4547,7 @@ a {
 
 .modal-art {
     width: 120px;
+
     height: 120px;
 
     margin:
@@ -4250,10 +4629,11 @@ a {
 
 
 /* =========================================================
-   ANIMATIONS
+   KEYFRAMES
 ========================================================= */
 
 @keyframes activityOrbFloat {
+
     0%,
     100% {
         transform:
@@ -4270,6 +4650,7 @@ a {
 
 
 @keyframes activityRingMove {
+
     0%,
     100% {
         transform:
@@ -4290,6 +4671,7 @@ a {
 
 
 @keyframes growthOrbMove {
+
     0%,
     100% {
         transform:
@@ -4306,6 +4688,7 @@ a {
 
 
 @keyframes growthParticleMove {
+
     0%,
     100% {
         transform:
@@ -4326,6 +4709,7 @@ a {
 
 
 @keyframes lavenderOrbMove {
+
     0%,
     100% {
         transform:
@@ -4340,6 +4724,7 @@ a {
 
 
 @keyframes bandOrbFloat {
+
     0%,
     100% {
         transform:
@@ -4356,6 +4741,7 @@ a {
 
 
 @keyframes bandDotFloat {
+
     0%,
     100% {
         transform:
@@ -4370,6 +4756,7 @@ a {
 
 
 @keyframes passportOrbFloat {
+
     0%,
     100% {
         transform:
@@ -4386,6 +4773,7 @@ a {
 
 
 @keyframes passportRingPulse {
+
     0%,
     100% {
         transform:
@@ -4406,6 +4794,7 @@ a {
 
 
 @keyframes parentsOrbFloat {
+
     0%,
     100% {
         transform:
@@ -4420,6 +4809,7 @@ a {
 
 
 @keyframes downloadOrbFloat {
+
     0%,
     100% {
         transform:
@@ -4462,6 +4852,37 @@ a {
     .growth-copy p {
         font-size: 10.5px;
     }
+
+
+    .activity-card-image {
+        max-width: 245px;
+
+        max-height: 255px;
+    }
+
+
+    .activity-card[data-title="Move Mission"]
+    .activity-card-image {
+        max-width: 205px;
+    }
+
+
+    .activity-card[data-title="Nature Quest"]
+    .activity-card-image {
+        max-width: 210px;
+    }
+
+
+    .activity-card[data-title="Story Spark"]
+    .activity-card-image {
+        max-width: 250px;
+    }
+
+
+    .activity-card[data-title="Team Quest"]
+    .activity-card-image {
+        max-width: 225px;
+    }
 }
 
 
@@ -4482,6 +4903,7 @@ a {
         top: 72px;
 
         left: 20px;
+
         right: 20px;
 
         display: none;
@@ -4497,7 +4919,8 @@ a {
         background:
             rgba(255,255,255,0.94);
 
-        backdrop-filter: blur(20px);
+        backdrop-filter:
+            blur(20px);
 
         box-shadow:
             0 20px 50px
@@ -4520,7 +4943,8 @@ a {
 
     .hero-video-section
     .hero-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         min-height: auto;
 
@@ -4535,13 +4959,24 @@ a {
 
 
     .activity-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .activity-card-image {
+        max-width: 300px;
+
+        max-height: 290px;
     }
 
 
     .growth-card-grid {
         grid-template-columns:
-            repeat(3,1fr);
+            repeat(
+                3,
+                1fr
+            );
 
         gap: 18px;
     }
@@ -4549,14 +4984,18 @@ a {
 
     .personalized-grid {
         grid-template-columns:
-            repeat(3,1fr);
+            repeat(
+                3,
+                1fr
+            );
 
         gap: 14px;
     }
 
 
     .band-video-card {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -4566,39 +5005,46 @@ a {
 
 
     .band-feature-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
     .passport-heading-new {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         gap: 18px;
     }
 
 
     .passport-card-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
     .passport-card-wide {
-        grid-column: auto;
+        grid-column:
+            auto;
     }
 
 
     .parents-card-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
     .parent-wide {
-        grid-column: auto;
+        grid-column:
+            auto;
     }
 
 
     .download-card {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -4623,7 +5069,9 @@ a {
 
     .container {
         width:
-            calc(100% - 28px);
+            calc(
+                100% - 28px
+            );
     }
 
 
@@ -4701,12 +5149,61 @@ a {
 
     .activity-image-slot {
         min-height: 310px;
+
+        padding:
+            16px 12px;
+    }
+
+
+    .activity-card-image {
+        max-width: 220px;
+
+        max-height: 245px;
+    }
+
+
+    .activity-card[data-title="Move Mission"]
+    .activity-card-image {
+        max-width: 180px;
+    }
+
+
+    .activity-card[data-title="Puzzle Planet"]
+    .activity-card-image {
+        max-width: 170px;
+    }
+
+
+    .activity-card[data-title="Nature Quest"]
+    .activity-card-image {
+        max-width: 180px;
+    }
+
+
+    .activity-card[data-title="Colour Quest"]
+    .activity-card-image {
+        max-width: 190px;
+    }
+
+
+    .activity-card[data-title="Story Spark"]
+    .activity-card-image {
+        max-width: 215px;
+    }
+
+
+    .activity-card[data-title="Team Quest"]
+    .activity-card-image {
+        max-width: 190px;
     }
 
 
     .growth-card-grid {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(
+                2,
+                1fr
+            );
     }
 
 
@@ -4721,7 +5218,8 @@ a {
 
 
     .personalized-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -4845,8 +5343,13 @@ a {
     }
 
 
+    /* =====================================================
+       ACTIVITY CARDS ON MOBILE
+    ====================================================== */
+
     .activity-card {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         min-height: 520px;
     }
@@ -4856,24 +5359,102 @@ a {
         min-height: 305px;
 
         padding: 26px;
+
+        padding-bottom: 170px;
     }
 
 
     .activity-image-slot {
         position: absolute;
 
+        z-index: 2;
+
         right: 0;
+
         bottom: 0;
 
         width: 58%;
-        height: 235px;
+
+        height: 225px;
 
         min-height: 0;
+
+        padding:
+            12px 14px;
+    }
+
+
+    /*
+        Mobile images stay in the lower-right visual area.
+    */
+
+    .activity-card-image {
+        width: 100%;
+
+        height: 100%;
+
+        max-width: 205px;
+
+        max-height: 205px;
+
+        object-fit: contain;
+
+        object-position:
+            center bottom;
+    }
+
+
+    .activity-card[data-title="Move Mission"]
+    .activity-card-image {
+        max-width: 165px;
+
+        max-height: 205px;
+    }
+
+
+    .activity-card[data-title="Puzzle Planet"]
+    .activity-card-image {
+        max-width: 155px;
+
+        max-height: 155px;
+    }
+
+
+    .activity-card[data-title="Nature Quest"]
+    .activity-card-image {
+        max-width: 160px;
+
+        max-height: 205px;
+    }
+
+
+    .activity-card[data-title="Colour Quest"]
+    .activity-card-image {
+        max-width: 170px;
+
+        max-height: 170px;
+    }
+
+
+    .activity-card[data-title="Story Spark"]
+    .activity-card-image {
+        max-width: 205px;
+
+        max-height: 180px;
+    }
+
+
+    .activity-card[data-title="Team Quest"]
+    .activity-card-image {
+        max-width: 180px;
+
+        max-height: 205px;
     }
 
 
     .growth-card-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -4897,15 +5478,14 @@ a {
     }
 
 
-    /* PASSPORT */
-
     .passport-heading-new h2 {
         font-size: 48px;
     }
 
 
     .passport-activity-card {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         min-height: 515px;
     }
@@ -4923,9 +5503,11 @@ a {
         position: absolute;
 
         right: 0;
+
         bottom: 0;
 
         width: 58%;
+
         height: 225px;
 
         min-height: 0;
@@ -4934,6 +5516,7 @@ a {
 
     .passport-big-circle {
         width: 120px;
+
         height: 120px;
     }
 
@@ -4950,7 +5533,8 @@ a {
 
 
     .parent-activity-card {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         min-height: 515px;
     }
@@ -4967,9 +5551,11 @@ a {
         position: absolute;
 
         right: 0;
+
         bottom: 0;
 
         width: 57%;
+
         height: 225px;
 
         min-height: 0;
@@ -4999,7 +5585,8 @@ a {
 
 
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -5025,7 +5612,8 @@ a {
     .section-decoration *,
     .section-decoration *::before,
     .section-decoration *::after {
-        animation: none !important;
+        animation:
+            none !important;
     }
 
 
@@ -5036,6 +5624,17 @@ a {
         transform: none;
 
         transition: none;
+    }
+
+
+    .activity-card-image {
+        transition: none;
+    }
+
+
+    .activity-card:hover
+    .activity-card-image {
+        transform: none;
     }
 
 
